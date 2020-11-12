@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="navigation-bar d-flex justify-content-between">
+    <h1 class="font-weight-bold">Restaurant's list:</h1>
+    <%= link_to "Create a new restaurant", new_restaurant_path, class: "btn btn-primary align-middle" %>
+  </div>
+  <% @restaurants.each do |restau| %>
+    <div class="row bg-light mt-4 p-3 rounded-lg d-flex justify-content-between">
+      <em><h3 class="restau_name text-primary"> <%= link_to restau.name, restaurant_path(restau.id) %> </h3></em>
+      <p class="restau_adress text-secondary"> <%= restau.address %> </p>
+    </div>
+  <% end %>
+</div>
